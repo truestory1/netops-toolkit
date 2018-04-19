@@ -8,6 +8,7 @@ RUN apk --update add \
     openssh \
     nmap \
     nmap-scripts \
+    net-tools \
     curl \
     tcpdump \
     bind-tools \
