@@ -12,5 +12,6 @@ Based on https://hub.docker.com/r/raesene/alpine-nettools/ and added some additi
 - nmap
 - nmap-ncat
 - nmap-scripts
+- net-tools
 - openssh
 - tcpdump
