@@ -8,6 +8,7 @@ Based on https://hub.docker.com/r/raesene/alpine-nettools/ and added some additi
 - fping
 - htop
 - iperf3
+- iproute2
 - jq
 - nmap
 - nmap-ncat

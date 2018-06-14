@@ -9,6 +9,7 @@ RUN apk --update add \
     nmap \
     nmap-scripts \
     net-tools \
+    iproute2 \
     curl \
     tcpdump \
     bind-tools \
