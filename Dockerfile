@@ -15,7 +15,7 @@ RUN apk --update add \
     bind-tools \
     jq \
     nmap-ncat \
-    iperf3 && \
+    iperf3 \
     openssl && \
     sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config && rm -rf /var/cache/apk/*
 
