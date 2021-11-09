@@ -16,8 +16,8 @@ RUN apk --update add \
     jq \
     nmap-ncat \
     iperf3 && \
+    openssl && \
     sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config && rm -rf /var/cache/apk/*
-
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh

@@ -1,8 +1,7 @@
 # Network Operations Container
 
-Based on https://hub.docker.com/r/raesene/alpine-nettools/ and added some additional tools.
-
 ## Packages installed
+
 - bind-tools
 - curl
 - fping
@@ -15,4 +14,5 @@ Based on https://hub.docker.com/r/raesene/alpine-nettools/ and added some additi
 - nmap-scripts
 - net-tools
 - openssh
+- openssl
 - tcpdump
