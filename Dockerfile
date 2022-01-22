@@ -1,23 +1,33 @@
-FROM alpine
+FROM alpine:3.15.0
 
-ENTRYPOINT ["/entrypoint.sh"]
-
-RUN apk --update add \
-    fping \
-    htop \
-    openssh \
-    nmap \
-    nmap-scripts \
-    net-tools \
-    iproute2 \
-    curl \
-    tcpdump \
+RUN set -ex && \
+    apk update && \
+    apk upgrade && \
+    apk add --no-cache \
     bind-tools \
-    jq \
-    nmap-ncat \
+    conntrack-tools \
+    curl \
+    fping \
+    git \
+    htop \
     iperf3 \
-    openssl && \
-    sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config && rm -rf /var/cache/apk/*
+    iproute2 \
+    ipset \
+    iputils \
+    jq \
+    net-tools \
+    nmap \
+    nmap-ncat \
+    nmap-scripts \
+    openssh \
+    openssl \
+    tcpdump \
+    vim \
+    zsh
 
-COPY entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+COPY configs/zshrc .zshrc
+
+CMD ["zsh"]
