@@ -3,7 +3,7 @@ name: Docker Build & Push
 on:
   push:
     branches:
-      - 'master'
+      - master
 
 jobs:
   update_release:
@@ -73,7 +73,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5.3.0
         with:
-          provenance: false
+          # provenance: false
           context: .
           build-args: ARCH=arm32v7 ARCH=amd64
           file: Dockerfile
