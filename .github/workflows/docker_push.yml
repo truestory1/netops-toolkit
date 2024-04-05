@@ -80,4 +80,6 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
           push: true
           # tags: ${{ steps.meta.outputs.tags }}
-          tags: dkusidlo/alpine-netops:${{ steps.get-latest-tag.outputs.tag }}
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-netops:${{ steps.get-latest-tag.outputs.tag }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-netops:latest
