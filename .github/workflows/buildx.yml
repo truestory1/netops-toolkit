@@ -41,6 +41,7 @@ jobs:
             --platform=linux/amd64 \
             --load \
             .
+          docker run -d ${{ env.IMAGE_NAME }}:testing
           CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
           echo "CID=$CID"
           VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
