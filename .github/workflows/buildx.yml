@@ -2,7 +2,7 @@ name: buildx
 
 on:
   workflow_dispatch:
-  pull_request:
+  # pull_request:
   push:
     branches:
       - 'master'
@@ -13,7 +13,7 @@ env:
 jobs:
   buildx:
     runs-on: ubuntu-22.04
-    # if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
