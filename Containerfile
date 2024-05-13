@@ -39,7 +39,7 @@ ARG TCPDUMP_VERSION=4.99.4-r1
 # renovate: datasource=repology lookupName=alpine_3_19/vim
 ARG VIM_VERSION=9.0.2127-r0
 # renovate: datasource=repology lookupName=alpine_3_19/wget
-ADD WGET_VERSION=1.21.2-r1
+ADD WGET_VERSION=1.21.4-r0
 # renovate: datasource=repology lookupName=alpine_3_19/zsh
 ARG ZSH_VERSION=5.9-r2
 
