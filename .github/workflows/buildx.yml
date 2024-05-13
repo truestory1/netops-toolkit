@@ -42,7 +42,9 @@ jobs:
             --load \
             .
           CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
-      #     VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
+          echo "CID=$CID"
+          VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
+          echo "VER_FULL=$VER_FULL"
       #     docker rm -f $CID
       #     echo "VER_FULL=$VER_FULL" >> $GITHUB_ENV
       #     VER_MAJOR=$(echo $VER_FULL | cut -d. -f-1)
