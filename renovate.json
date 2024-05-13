@@ -3,5 +3,17 @@
   "includeForks": true,
   "extends": [
     "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^Containerfile$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z]+) lookupName=(?<depName>[a-z_0-9/]+)\\nARG (?<packageName>[A-Z_]+)_VERSION=(?<currentValue>.+)"
+      ],
+      "datasourceTemplate": "{{{datasource}}}",
+      "lookupNameTemplate": "{{{depName}}}",
+      "packageNameTemplate": "{{{packageName}}}",
+      "currentValueTemplate": "{{{currentValue}}}"
+    }
   ]
 }
