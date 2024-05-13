@@ -42,7 +42,7 @@ jobs:
             --load \
             .
           docker run -d ${{ env.IMAGE_NAME }}:testing
-          CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
+          CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing sleep 9999)
           echo "CID=$CID"
           VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
           echo "VER_FULL=$VER_FULL"
