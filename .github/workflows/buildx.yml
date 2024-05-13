@@ -41,7 +41,7 @@ jobs:
             --platform=linux/amd64 \
             --load \
             .
-      #     CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
+          CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
       #     VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
       #     docker rm -f $CID
       #     echo "VER_FULL=$VER_FULL" >> $GITHUB_ENV
