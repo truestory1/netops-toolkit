@@ -8,7 +8,7 @@ on:
       - 'master'
 
 env:
-  IMAGE_NAME: truestory1/alpine-netops
+  IMAGE_NAME: ghcr.io/truestory1/alpine-netops
 
 jobs:
   buildx:
