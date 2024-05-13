@@ -1,46 +1,46 @@
 FROM alpine:3.19.1
 
-# renovate: datasource=repology lookupName=alpine_3_19/bind-tools
+# renovate: datasource=repology depName=alpine_3_19/bind-tools versioning=loose
 ARG BIND_TOOLS_VERSION="9.18.24-r1"
-# renovate: datasource=repology lookupName=alpine_3_19/conntrack-tools
+# renovate: datasource=repology depName=alpine_3_19/conntrack-tools versioning=loose
 ARG CONNTRACK_TOOLS_VERSION="1.4.8-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/curl
+# renovate: datasource=repology depName=alpine_3_19/curl versioning=loose
 ARG CURL_VERSION="8.5.0-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/fping
+# renovate: datasource=repology depName=alpine_3_19/fping versioning=loose
 ARG FPING_VERSION="5.1-r5"
-# renovate: datasource=repology lookupName=alpine_3_19/git
+# renovate: datasource=repology depName=alpine_3_19/git versioning=loose
 ARG GIT_VERSION="2.43.0-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/htop
+# renovate: datasource=repology depName=alpine_3_19/htop versioning=loose
 ARG HTOP_VERSION="3.2.2-r1"
-# renovate: datasource=repology lookupName=alpine_3_19/iperf3
+# renovate: datasource=repology depName=alpine_3_19/iperf3 versioning=loose
 ARG IPERF3_VERSION="3.16-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/iproute2
+# renovate: datasource=repology depName=alpine_3_19/iproute2 versioning=loose
 ARG IPROUTE2_VERSION="6.6.0-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/ipset
+# renovate: datasource=repology depName=alpine_3_19/ipset versioning=loose
 ARG IPSET_VERSION="7.19-r2"
-# renovate: datasource=repology lookupName=alpine_3_19/iputils
+# renovate: datasource=repology depName=alpine_3_19/iputils versioning=loose
 ARG IPUTILS_VERSION="20221126-r2"
-# renovate: datasource=repology lookupName=alpine_3_19/jq
+# renovate: datasource=repology depName=alpine_3_19/jq versioning=loose
 ARG JQ_VERSION="1.7.1-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/net-tools
+# renovate: datasource=repology depName=alpine_3_19/net-tools versioning=loose
 ARG NET_TOOLS_VERSION="2.10-r3"
-# renovate: datasource=repology lookupName=alpine_3_19/nmap
+# renovate: datasource=repology depName=alpine_3_19/nmap versioning=loose
 ARG NMAP_VERSION="7.94-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/nmap-ncat
+# renovate: datasource=repology depName=alpine_3_19/nmap-ncat versioning=loose
 ARG NMAP_NCAT_VERSION="7.94-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/nmap-scripts
+# renovate: datasource=repology depName=alpine_3_19/nmap-scripts versioning=loose
 ARG NMAP_SCRIPTS_VERSION="7.94-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/openssh
+# renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
 ARG OPENSSH_VERSION="9.6_p1-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/openssl
+# renovate: datasource=repology depName=alpine_3_19/openssl versioning=loose
 ARG OPENSSL_VERSION="3.1.4-r6"
-# renovate: datasource=repology lookupName=alpine_3_19/tcpdump
+# renovate: datasource=repology depName=alpine_3_19/tcpdump versioning=loose
 ARG TCPDUMP_VERSION="4.99.4-r1"
-# renovate: datasource=repology lookupName=alpine_3_19/vim
+# renovate: datasource=repology depName=alpine_3_19/vim versioning=loose
 ARG VIM_VERSION="9.0.2127-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/wget
+# renovate: datasource=repology depName=alpine_3_19/wget versioning=loose
 ARG WGET_VERSION="1.21.4-r0"
-# renovate: datasource=repology lookupName=alpine_3_19/zsh
+# renovate: datasource=repology depName=alpine_3_19/zsh versioning=loose
 ARG ZSH_VERSION="5.9-r2"
 
 RUN set -ex \
