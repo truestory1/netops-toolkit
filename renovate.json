@@ -6,14 +6,11 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^Containerfile$"],
+      "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z]+) lookupName=(?<depName>[a-z_0-9/]+)\\nARG (?<packageName>[A-Z_]+)_VERSION=(?<currentValue>.+)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?( registryUrl=(?<registryUrl>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ],
-      "datasourceTemplate": "{{{datasource}}}",
-      "lookupNameTemplate": "{{{depName}}}",
-      "packageNameTemplate": "{{{packageName}}}",
-      "currentValueTemplate": "{{{currentValue}}}"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ]
 }
