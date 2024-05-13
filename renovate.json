@@ -6,7 +6,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["^Containerfile$"],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?( registryUrl=(?<registryUrl>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ],
