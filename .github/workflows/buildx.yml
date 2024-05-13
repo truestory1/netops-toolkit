@@ -6,9 +6,8 @@ on:
     branches:
       - 'master'
 
-
 env:
-  IMAGE_NAME: truestory1/zpa-connector-image
+  IMAGE_NAME: truestory1/alpine-netops
 
 jobs:
   buildx:
@@ -42,7 +41,7 @@ jobs:
             --load \
             .
           CID=$(docker run -d ${{ env.IMAGE_NAME }}:testing)
-          VER_FULL=$(docker exec $CID rpm -q --queryformat '%{VERSION}' zpa-connector)
+          VER_FULL=$(docker exec $CID date +"%Y.%m.%d")
           echo "VER_FULL=$VER_FULL" >> $GITHUB_ENV
           docker rm -f $CID
           VER_MINOR=$(echo $VER_FULL | cut -d. -f-2)
