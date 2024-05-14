@@ -158,3 +158,81 @@ The container includes a custom `.zshrc` configuration file, which sets up `oh-m
 ## Conclusion
 
 This Docker image provides a robust toolkit for debugging Kubernetes issues, particularly those related to network connectivity. With a range of powerful tools and a customizable shell environment, it can significantly streamline the troubleshooting process.
+
+## Usage example
+
+Nginx deployment:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-debug
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-debug
+  template:
+    metadata:
+      labels:
+        app: nginx-debug
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+```
+
+Let's presume there is a need to perform a debug procedure.
+Steps:
+- Get container name within pod
+```sh
+➜  netops-demo k -n test describe pod nginx-debug-74bc87f79f-mk644
+Name:             nginx-debug-74bc87f79f-mk644 <--------------------------------------------------------------  POD NAME
+Namespace:        test
+[...........]
+Containers:
+  nginx:  <----------------------------------------------------------------------------------------------- CONTAINER NAME
+    Container ID:   containerd://45aa75c5b0a229da569c1dc91e96c3fb612c4d01b2c2a5b2ca83f0b7b427e242
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:e3ffd9d807cce9d9f973faff2e420b05243b49fd241b576a3de929bb3362cb60
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 14 May 2024 16:46:14 +0200
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-2p7pv (ro)
+```
+- Run debug container
+```sh
+kubectl debug -n <namespace> -it <POD NAME> --image=ghcr.io/truestory1/alpine-netops --target=<CONTAINER NAME>
+```
+Example
+```sh
+$ kubectl debug -n test -it nginx-debug-74bc87f79f-mk644 --image=ghcr.io/truestory1/alpine-netops --target=nginx
+Targeting container "nginx". If you don't see processes from this container it may be because the container runtime doesn't support this feature.
+Defaulting debug container name to debugger-r6gdt.
+If you don't see a command prompt, try pressing enter.
+➜  / ps -ef
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   29 101       0:00 nginx: worker process
+   30 101       0:00 nginx: worker process
+   31 101       0:00 nginx: worker process
+   32 101       0:00 nginx: worker process
+   33 101       0:00 nginx: worker process
+   34 101       0:00 nginx: worker process
+   35 101       0:00 nginx: worker process
+   36 101       0:00 nginx: worker process
+   37 101       0:00 nginx: worker process
+   38 101       0:00 nginx: worker process
+   39 101       0:00 nginx: worker process
+   40 101       0:00 nginx: worker process
+  217 root      0:00 zsh
+  272 root      0:00 ps -ef
+```
