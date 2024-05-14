@@ -43,6 +43,8 @@ jobs:
             -f Containerfile \
             -t ${{ env.IMAGE_NAME }}:testing \
             --platform=linux/amd64 \
+            --cache-to type=gha,mode=max \
+            --cache-from type=gha \
             --load \
             .
           docker run -d ${{ env.IMAGE_NAME }}:testing
