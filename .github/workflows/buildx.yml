@@ -9,6 +9,7 @@ on:
 
 env:
   IMAGE_NAME: ghcr.io/truestory1/alpine-netops
+  PLATFORMS: linux/amd64,linux/arm64
 
 jobs:
   buildx:
@@ -30,7 +31,8 @@ jobs:
           context: .
           file: Containerfile
           tags: ${{ env.IMAGE_NAME }}:testing
-          platforms: linux/amd64
+          platforms: ${{ env.PLATFORMS }}
+          provenance: false
 
       - name: Load Built Image and Get Variables
         id: vars
@@ -70,5 +72,6 @@ jobs:
             ghcr.io/${{ env.IMAGE_NAME }}:${{ env.VER_FULL }}
             ghcr.io/${{ env.IMAGE_NAME }}:${{ env.VER_MINOR }}
             ghcr.io/${{ env.IMAGE_NAME }}:${{ env.VER_MAJOR }}
-          platforms: linux/amd64
+          platforms: ${{ env.PLATFORMS }}
+          provenance: false
           push: true

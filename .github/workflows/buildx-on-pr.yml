@@ -6,6 +6,7 @@ on:
 
 env:
   IMAGE_NAME: truestory1/alpine-netops
+  PLATFORMS: linux/amd64,linux/arm64
 
 jobs:
   buildx-on-pr:
@@ -27,7 +28,8 @@ jobs:
           context: .
           file: Containerfile
           tags: ${{ env.IMAGE_NAME }}:testing
-          platforms: linux/amd64
+          platforms: ${{ env.PLATFORMS }}
+          provenance: false
 
       - name: Login to ghcr.io
         uses: docker/login-action@v3
@@ -46,5 +48,6 @@ jobs:
           tags: |
             ghcr.io/${{ env.IMAGE_NAME }}:testing
             ghcr.io/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
-          platforms: linux/amd64
+          platforms: ${{ env.PLATFORMS }}
+          provenance: false
           push: true
