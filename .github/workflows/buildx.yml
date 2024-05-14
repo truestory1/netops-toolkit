@@ -33,6 +33,8 @@ jobs:
           tags: ${{ env.IMAGE_NAME }}:testing
           platforms: ${{ env.PLATFORMS }}
           provenance: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Load Built Image and Get Variables
         id: vars
@@ -75,3 +77,5 @@ jobs:
           platforms: ${{ env.PLATFORMS }}
           provenance: false
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
