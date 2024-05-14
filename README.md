@@ -40,7 +40,7 @@ Additionally, the container is configured with `oh-my-zsh`, along with the `zsh-
 To pull the Docker image, run the following command:
 
 ```sh
-docker pull truestory1/alpine-netops
+docker pull ghcr.io/truestory1/alpine-netops
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ docker pull truestory1/alpine-netops
 You can run the container interactively to start troubleshooting:
 
 ```sh
-docker run -it --rm truestory1/alpine-netops
+docker run -it --rm ghcr.io/truestory1/alpine-netops
 ```
 
 ### Running in Kubernetes
@@ -70,7 +70,7 @@ To run the container in a specific Kubernetes namespace, you can create a standa
     spec:
       containers:
         - name: debug-container
-          image: truestory1/alpine-netops
+          image: ghcr.io/truestory1/alpine-netops
           stdin: true
           tty: true
     ```
@@ -114,7 +114,7 @@ To run the container as a sidecar in an existing pod, you can modify the pod's c
               image: your-app-image
               # your app container specs
             - name: debug-container
-              image: truestory1/alpine-netops
+              image: ghcr.io/truestory1/alpine-netops
               stdin: true
               tty: true
     ```
