@@ -189,7 +189,7 @@ Let's presume there is a need to perform a debug procedure.
 Steps:
 - Get container name within pod
 ```sh
-➜  netops-demo k -n test describe pod nginx-debug-74bc87f79f-mk644
+➜  k -n test describe pod nginx-debug-74bc87f79f-mk644
 Name:             nginx-debug-74bc87f79f-mk644 <--------------------------------------------------------------  POD NAME
 Namespace:        test
 [...........]
