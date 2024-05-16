@@ -51,29 +51,29 @@ RUN set -ex \
         conntrack-tools${CONNTRACK_TOOLS_VERSION:+=$CONNTRACK_TOOLS_VERSION} \
         curl${CURL_VERSION:+=$CURL_VERSION} \
         fping${FPING_VERSION:+=$FPING_VERSION} \
-        git${GIT_VERSION:+=$GIT_VERSION} \
-        htop${HTOP_VERSION:+=$HTOP_VERSION} \
-        iperf3${IPERF3_VERSION:+=$IPERF3_VERSION} \
-        iproute2${IPROUTE2_VERSION:+=$IPROUTE2_VERSION} \
-        ipset${IPSET_VERSION:+=$IPSET_VERSION} \
-        iputils${IPUTILS_VERSION:+=$IPUTILS_VERSION} \
-        jq${JQ_VERSION:+=$JQ_VERSION} \
-        net-tools${NET_TOOLS_VERSION:+=$NET_TOOLS_VERSION} \
-        nmap${NMAP_VERSION:+=$NMAP_VERSION} \
-        nmap-ncat${NMAP_NCAT_VERSION:+=$NMAP_NCAT_VERSION} \
-        nmap-scripts${NMAP_SCRIPTS_VERSION:+=$NMAP_SCRIPTS_VERSION} \
-        openssh${OPENSSH_VERSION:+=$OPENSSH_VERSION} \
-        openssl${OPENSSL_VERSION:+=$OPENSSL_VERSION} \
-        tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
-        vim${VIM_VERSION:+=$VIM_VERSION} \
+    #     git${GIT_VERSION:+=$GIT_VERSION} \
+    #     htop${HTOP_VERSION:+=$HTOP_VERSION} \
+    #     iperf3${IPERF3_VERSION:+=$IPERF3_VERSION} \
+    #     iproute2${IPROUTE2_VERSION:+=$IPROUTE2_VERSION} \
+    #     ipset${IPSET_VERSION:+=$IPSET_VERSION} \
+    #     iputils${IPUTILS_VERSION:+=$IPUTILS_VERSION} \
+    #     jq${JQ_VERSION:+=$JQ_VERSION} \
+    #     net-tools${NET_TOOLS_VERSION:+=$NET_TOOLS_VERSION} \
+    #     nmap${NMAP_VERSION:+=$NMAP_VERSION} \
+    #     nmap-ncat${NMAP_NCAT_VERSION:+=$NMAP_NCAT_VERSION} \
+    #     nmap-scripts${NMAP_SCRIPTS_VERSION:+=$NMAP_SCRIPTS_VERSION} \
+    #     openssh${OPENSSH_VERSION:+=$OPENSSH_VERSION} \
+    #     openssl${OPENSSL_VERSION:+=$OPENSSL_VERSION} \
+    #     tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
+    #     vim${VIM_VERSION:+=$VIM_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true \
-    && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
-    && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true \
+#     && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
+#     && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-COPY configs/zshrc .zshrc
+# COPY configs/zshrc .zshrc
 
 CMD ["zsh"]
