@@ -51,7 +51,7 @@ RUN set -ex \
         conntrack-tools${CONNTRACK_TOOLS_VERSION:+=$CONNTRACK_TOOLS_VERSION} \
         curl${CURL_VERSION:+=$CURL_VERSION} \
         fping${FPING_VERSION:+=$FPING_VERSION} \
-    #     git${GIT_VERSION:+=$GIT_VERSION} \
+        git${GIT_VERSION:+=$GIT_VERSION} \
     #     htop${HTOP_VERSION:+=$HTOP_VERSION} \
     #     iperf3${IPERF3_VERSION:+=$IPERF3_VERSION} \
     #     iproute2${IPROUTE2_VERSION:+=$IPROUTE2_VERSION} \
