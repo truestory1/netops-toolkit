@@ -45,7 +45,7 @@ ENV ZSH_VERSION="5.9-r2"
 
 RUN set -ex \
     && apk update \
-    && apk upgrade \
+    # && apk upgrade \ # Not needed for this image - we want reproducibility
     && apk add --no-cache \
         bind-tools${BIND_TOOLS_VERSION:+=$BIND_TOOLS_VERSION} \
         conntrack-tools${CONNTRACK_TOOLS_VERSION:+=$CONNTRACK_TOOLS_VERSION} \
