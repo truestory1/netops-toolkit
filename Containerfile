@@ -9,7 +9,7 @@ ENV CURL_VERSION="8.5.0-r0"
 # renovate: datasource=repology depName=alpine_3_19/fping versioning=loose
 ENV FPING_VERSION="5.1-r5"
 # renovate: datasource=repology depName=alpine_3_19/git versioning=loose
-ENV GIT_VERSION="2.43.0-r0"
+ENV GIT_VERSION="2.43.4-r0"
 # renovate: datasource=repology depName=alpine_3_19/htop versioning=loose
 ENV HTOP_VERSION="3.2.2-r1"
 # renovate: datasource=repology depName=alpine_3_19/iperf3 versioning=loose
