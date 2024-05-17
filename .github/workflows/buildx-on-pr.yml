@@ -5,13 +5,12 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: truestory1/netops-toolkit
   PLATFORMS: linux/amd64 #,linux/arm64
+  REGISTRY: ghcr.io
 
 jobs:
   buildx-on-pr:
     runs-on: ubuntu-22.04
-    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
@@ -22,38 +21,26 @@ jobs:
       - name: Set up Buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb # v3
 
-      - name: Initial Buildx
-        uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5
-        with:
-          context: .
-          file: Containerfile
-          tags: ${{ env.IMAGE_NAME }}:testing
-          platforms: ${{ env.PLATFORMS }}
-          provenance: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Set up variable repository name
+        run: echo "IMAGE_NAME=${{ github.repository }}" >> $GITHUB_ENV
 
-      - name: Login to ghcr.io
+      - name: Image registry login
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3
-        if: github.actor == github.event.repository.owner.login
         with:
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Buildx and Push
         uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5
-        if: github.actor == github.event.repository.owner.login
         with:
           context: .
           file: Containerfile
           tags: |
-            ghcr.io/${{ env.IMAGE_NAME }}:testing
-            ghcr.io/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
           platforms: ${{ env.PLATFORMS }}
           provenance: false
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          # outputs: "type=image,name=target,\
-          #           annotation-index.org.opencontainers.image.description=NetOps Toolkit - Kubernetes Debugging Container"
