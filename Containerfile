@@ -9,7 +9,7 @@ ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
 ENV CURL_VERSION="8.7.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/fping versioning=loose
-ENV FPING_VERSION="5.1-r5"
+ENV FPING_VERSION="5.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.43.4-r0"
 # renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
