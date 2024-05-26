@@ -27,11 +27,11 @@ ENV JQ_VERSION="1.7.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/net-tools versioning=loose
 ENV NET_TOOLS_VERSION="2.10-r3"
 # renovate: datasource=repology depName=alpine_3_20/nmap versioning=loose
-ENV NMAP_VERSION="7.94-r0"
+ENV NMAP_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/nmap-ncat versioning=loose
-ENV NMAP_NCAT_VERSION="7.94-r0"
+ENV NMAP_NCAT_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/nmap-scripts versioning=loose
-ENV NMAP_SCRIPTS_VERSION="7.94-r0"
+ENV NMAP_SCRIPTS_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
 ENV OPENSSH_VERSION="9.6_p1-r0"
 # renovate: datasource=repology depName=alpine_3_20/openssl versioning=loose
