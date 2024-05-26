@@ -3,7 +3,7 @@ FROM alpine:3.20.0@sha256:77726ef6b57ddf65bb551896826ec38bc3e53f75cdde31354fbffb
 LABEL org.opencontainers.image.description "NetOps Toolkit - Kubernetes Debugging Container"
 
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.18.24-r1"
+ENV BIND_TOOLS_VERSION="9.18.27-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
