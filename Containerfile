@@ -33,7 +33,7 @@ ENV NMAP_NCAT_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/nmap-scripts versioning=loose
 ENV NMAP_SCRIPTS_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
-ENV OPENSSH_VERSION="9.6_p1-r0"
+ENV OPENSSH_VERSION="9.7_p1-r3"
 # renovate: datasource=repology depName=alpine_3_20/openssl versioning=loose
 ENV OPENSSL_VERSION="3.1.4-r6"
 # renovate: datasource=repology depName=alpine_3_20/tcpdump versioning=loose
