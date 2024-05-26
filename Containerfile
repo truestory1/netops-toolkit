@@ -13,7 +13,7 @@ ENV FPING_VERSION="5.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.45.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
-ENV HTOP_VERSION="3.2.2-r1"
+ENV HTOP_VERSION="3.3.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/iperf3 versioning=loose
 ENV IPERF3_VERSION="3.17.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/iproute2 versioning=loose
