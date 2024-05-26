@@ -15,9 +15,9 @@ ENV GIT_VERSION="2.43.4-r0"
 # renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
 ENV HTOP_VERSION="3.2.2-r1"
 # renovate: datasource=repology depName=alpine_3_20/iperf3 versioning=loose
-ENV IPERF3_VERSION="3.16-r0"
+ENV IPERF3_VERSION="3.17.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/iproute2 versioning=loose
-ENV IPROUTE2_VERSION="6.6.0-r0"
+ENV IPROUTE2_VERSION="6.9.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/ipset versioning=loose
 ENV IPSET_VERSION="7.19-r2"
 # renovate: datasource=repology depName=alpine_3_20/iputils versioning=loose
