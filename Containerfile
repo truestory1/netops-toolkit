@@ -41,7 +41,7 @@ ENV TCPDUMP_VERSION="4.99.4-r1"
 # renovate: datasource=repology depName=alpine_3_20/vim versioning=loose
 ENV VIM_VERSION="9.1.0414-r0"
 # renovate: datasource=repology depName=alpine_3_20/wget versioning=loose
-ENV WGET_VERSION="1.21.4-r0"
+ENV WGET_VERSION="1.24.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r3"
 
