@@ -1,49 +1,49 @@
-FROM alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+FROM alpine:3.20.0@sha256:77726ef6b57ddf65bb551896826ec38bc3e53f75cdde31354fbffb4f25238ebd
 
 LABEL org.opencontainers.image.description "NetOps Toolkit - Kubernetes Debugging Container"
 
-# renovate: datasource=repology depName=alpine_3_19/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.18.24-r1"
-# renovate: datasource=repology depName=alpine_3_19/conntrack-tools versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
+ENV BIND_TOOLS_VERSION="9.18.27-r0"
+# renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
-# renovate: datasource=repology depName=alpine_3_19/curl versioning=loose
-ENV CURL_VERSION="8.5.0-r0"
-# renovate: datasource=repology depName=alpine_3_19/fping versioning=loose
-ENV FPING_VERSION="5.1-r5"
-# renovate: datasource=repology depName=alpine_3_19/git versioning=loose
-ENV GIT_VERSION="2.43.4-r0"
-# renovate: datasource=repology depName=alpine_3_19/htop versioning=loose
-ENV HTOP_VERSION="3.2.2-r1"
-# renovate: datasource=repology depName=alpine_3_19/iperf3 versioning=loose
-ENV IPERF3_VERSION="3.16-r0"
-# renovate: datasource=repology depName=alpine_3_19/iproute2 versioning=loose
-ENV IPROUTE2_VERSION="6.6.0-r0"
-# renovate: datasource=repology depName=alpine_3_19/ipset versioning=loose
-ENV IPSET_VERSION="7.19-r2"
-# renovate: datasource=repology depName=alpine_3_19/iputils versioning=loose
-ENV IPUTILS_VERSION="20221126-r2"
-# renovate: datasource=repology depName=alpine_3_19/jq versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
+ENV CURL_VERSION="8.7.1-r0"
+# renovate: datasource=repology depName=alpine_3_20/fping versioning=loose
+ENV FPING_VERSION="5.2-r0"
+# renovate: datasource=repology depName=alpine_3_20/git versioning=loose
+ENV GIT_VERSION="2.45.1-r0"
+# renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
+ENV HTOP_VERSION="3.3.0-r0"
+# renovate: datasource=repology depName=alpine_3_20/iperf3 versioning=loose
+ENV IPERF3_VERSION="3.17.1-r0"
+# renovate: datasource=repology depName=alpine_3_20/iproute2 versioning=loose
+ENV IPROUTE2_VERSION="6.9.0-r0"
+# renovate: datasource=repology depName=alpine_3_20/ipset versioning=loose
+ENV IPSET_VERSION="7.21-r2"
+# renovate: datasource=repology depName=alpine_3_20/iputils versioning=loose
+ENV IPUTILS_VERSION="20240117-r0"
+# renovate: datasource=repology depName=alpine_3_20/jq versioning=loose
 ENV JQ_VERSION="1.7.1-r0"
-# renovate: datasource=repology depName=alpine_3_19/net-tools versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/net-tools versioning=loose
 ENV NET_TOOLS_VERSION="2.10-r3"
-# renovate: datasource=repology depName=alpine_3_19/nmap versioning=loose
-ENV NMAP_VERSION="7.94-r0"
-# renovate: datasource=repology depName=alpine_3_19/nmap-ncat versioning=loose
-ENV NMAP_NCAT_VERSION="7.94-r0"
-# renovate: datasource=repology depName=alpine_3_19/nmap-scripts versioning=loose
-ENV NMAP_SCRIPTS_VERSION="7.94-r0"
-# renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
-ENV OPENSSH_VERSION="9.6_p1-r0"
-# renovate: datasource=repology depName=alpine_3_19/openssl versioning=loose
-ENV OPENSSL_VERSION="3.1.5-r0"
-# renovate: datasource=repology depName=alpine_3_19/tcpdump versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/nmap versioning=loose
+ENV NMAP_VERSION="7.95-r0"
+# renovate: datasource=repology depName=alpine_3_20/nmap-ncat versioning=loose
+ENV NMAP_NCAT_VERSION="7.95-r0"
+# renovate: datasource=repology depName=alpine_3_20/nmap-scripts versioning=loose
+ENV NMAP_SCRIPTS_VERSION="7.95-r0"
+# renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
+ENV OPENSSH_VERSION="9.7_p1-r3"
+# renovate: datasource=repology depName=alpine_3_20/openssl versioning=loose
+ENV OPENSSL_VERSION="3.3.0-r2"
+# renovate: datasource=repology depName=alpine_3_20/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.4-r1"
-# renovate: datasource=repology depName=alpine_3_19/vim versioning=loose
-ENV VIM_VERSION="9.0.2127-r0"
-# renovate: datasource=repology depName=alpine_3_19/wget versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/vim versioning=loose
+ENV VIM_VERSION="9.1.0414-r0"
+# renovate: datasource=repology depName=alpine_3_20/wget versioning=loose
 ENV WGET_VERSION="1.21.4-r0"
-# renovate: datasource=repology depName=alpine_3_19/zsh versioning=loose
-ENV ZSH_VERSION="5.9-r2"
+# renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
+ENV ZSH_VERSION="5.9-r3"
 
 RUN set -ex \
     && apk update \
