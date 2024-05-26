@@ -43,7 +43,7 @@ ENV VIM_VERSION="9.1.0414-r0"
 # renovate: datasource=repology depName=alpine_3_20/wget versioning=loose
 ENV WGET_VERSION="1.21.4-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
-ENV ZSH_VERSION="5.9-r2"
+ENV ZSH_VERSION="5.9-r3"
 
 RUN set -ex \
     && apk update \
