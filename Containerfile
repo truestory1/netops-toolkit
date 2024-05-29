@@ -71,7 +71,7 @@ RUN set -ex \
         tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
         vim${VIM_VERSION:+=$VIM_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
-        yq-go{YQ_GO_VERSION:+=$YQ_GO_VERSION} \
+        yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
