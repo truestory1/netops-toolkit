@@ -44,6 +44,8 @@ ENV VIM_VERSION="9.1.0414-r0"
 ENV WGET_VERSION="1.24.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r3"
+# renovate: datasource=repology depName=alpine_3_20/yq-go versioning=loose
+ENV YQ_GO_VERSION="4.44.1-r0"
 
 RUN set -ex \
     && apk update \
@@ -69,6 +71,7 @@ RUN set -ex \
         tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
         vim${VIM_VERSION:+=$VIM_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
+        yq-go{YQ_GO_VERSION:+=$YQ_GO_VERSION} \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
