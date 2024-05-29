@@ -31,6 +31,7 @@ The following tools are pre-installed in the container:
 - **tcpdump**: Packet analyzer.
 - **vim**: Text editor.
 - **wget**: Network downloader.
+- **yq**: Portable command-line YAML processor written in Go
 - **zsh**: Z shell, a powerful command interpreter.
 
 Additionally, the container is configured with `oh-my-zsh`, along with the `zsh-autosuggestions` plugin and the `powerlevel10k` theme for an enhanced command-line experience.
