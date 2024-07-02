@@ -7,7 +7,7 @@ ENV BIND_TOOLS_VERSION="9.18.27-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
-ENV CURL_VERSION="8.7.1-r0"
+ENV CURL_VERSION="8.8.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/fping versioning=loose
 ENV FPING_VERSION="5.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
@@ -33,9 +33,9 @@ ENV NMAP_NCAT_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/nmap-scripts versioning=loose
 ENV NMAP_SCRIPTS_VERSION="7.95-r0"
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
-ENV OPENSSH_VERSION="9.7_p1-r3"
+ENV OPENSSH_VERSION="9.7_p1-r4"
 # renovate: datasource=repology depName=alpine_3_20/openssl versioning=loose
-ENV OPENSSL_VERSION="3.3.1-r0"
+ENV OPENSSL_VERSION="3.3.1-r1"
 # renovate: datasource=repology depName=alpine_3_20/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.4-r1"
 # renovate: datasource=repology depName=alpine_3_20/vim versioning=loose
