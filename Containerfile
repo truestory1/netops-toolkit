@@ -45,7 +45,7 @@ ENV WGET_VERSION="1.24.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r3"
 # renovate: datasource=repology depName=alpine_3_20/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.44.1-r1"
+ENV YQ_GO_VERSION="4.44.1-r2"
 
 RUN set -ex \
     && apk update \
