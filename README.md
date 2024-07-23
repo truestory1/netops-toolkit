@@ -11,6 +11,7 @@ This Docker image provides a lightweight and versatile environment for diagnosin
 
 The following tools are pre-installed in the container:
 
+- **bash**: Bourne Again SHell
 - **bind-tools**: Utilities for DNS querying.
 - **conntrack-tools**: Tools for network connection tracking.
 - **curl**: Command line tool for transferring data with URLs.
