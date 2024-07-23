@@ -2,6 +2,8 @@ FROM alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede21
 
 LABEL org.opencontainers.image.description "NetOps Toolkit - Kubernetes Debugging Container"
 
+# renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
+ENV BASH_VERSION="5.2.26-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
 ENV BIND_TOOLS_VERSION="9.18.27-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
@@ -51,6 +53,7 @@ RUN set -ex \
     && apk update \
     # && apk upgrade \ # Not needed for this image - we want reproducibility
     && apk add --no-cache \
+        bash${BASH_VERSION:+=$BASH_VERSION} \
         bind-tools${BIND_TOOLS_VERSION:+=$BIND_TOOLS_VERSION} \
         conntrack-tools${CONNTRACK_TOOLS_VERSION:+=$CONNTRACK_TOOLS_VERSION} \
         curl${CURL_VERSION:+=$CURL_VERSION} \
