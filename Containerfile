@@ -4,6 +4,8 @@ LABEL org.opencontainers.image.description "NetOps Toolkit - Kubernetes Debuggin
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
 ENV BASH_VERSION="5.2.26-r0"
+# renovate: datasource=repology depName=alpine_3_20/bash-completion versioning=loose
+ENV BASH_COMPLETION_VERSION="2.12.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
 ENV BIND_TOOLS_VERSION="9.18.27-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
@@ -54,6 +56,7 @@ RUN set -ex \
     # && apk upgrade \ # Not needed for this image - we want reproducibility
     && apk add --no-cache \
         bash${BASH_VERSION:+=$BASH_VERSION} \
+        bash-completion${BASH_COMPLETION_VERSION:+=$BASH_COMPLETION_VERSION} \
         bind-tools${BIND_TOOLS_VERSION:+=$BIND_TOOLS_VERSION} \
         conntrack-tools${CONNTRACK_TOOLS_VERSION:+=$CONNTRACK_TOOLS_VERSION} \
         curl${CURL_VERSION:+=$CURL_VERSION} \
