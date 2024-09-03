@@ -43,7 +43,7 @@ ENV OPENSSL_VERSION="3.3.1-r3"
 # renovate: datasource=repology depName=alpine_3_20/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.4-r1"
 # renovate: datasource=repology depName=alpine_3_20/vim versioning=loose
-ENV VIM_VERSION="9.1.0414-r0"
+ENV VIM_VERSION="9.1.0707-r0"
 # renovate: datasource=repology depName=alpine_3_20/wget versioning=loose
 ENV WGET_VERSION="1.24.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
