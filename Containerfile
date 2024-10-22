@@ -1,6 +1,6 @@
 FROM alpine:3.20.3@sha256:beefdbd8a1da6d2915566fde36db9db0b524eb737fc57cd1367effd16dc0d06d
 
-LABEL org.opencontainers.image.description "NetOps Toolkit - Kubernetes Debugging Container"
+LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
 ENV BASH_VERSION="5.2.26-r0"
