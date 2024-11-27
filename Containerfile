@@ -7,7 +7,7 @@ ENV BASH_VERSION="5.2.26-r0"
 # renovate: datasource=repology depName=alpine_3_20/bash-completion versioning=loose
 ENV BASH_COMPLETION_VERSION="2.12.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.18.27-r0"
+ENV BIND_TOOLS_VERSION="9.18.31-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
