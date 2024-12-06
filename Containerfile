@@ -1,11 +1,11 @@
-FROM alpine:3.20.3@sha256:1e42bbe2508154c9126d48c2b8a75420c3544343bf86fd041fb7527e017a4b4a
+FROM alpine:3.21.0
 
 LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
-ENV BASH_VERSION="5.2.26-r0"
+ENV BASH_VERSION="5.2.37-r0"
 # renovate: datasource=repology depName=alpine_3_20/bash-completion versioning=loose
-ENV BASH_COMPLETION_VERSION="2.12.0-r0"
+ENV BASH_COMPLETION_VERSION="2.14.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
 ENV BIND_TOOLS_VERSION="9.18.31-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
@@ -15,41 +15,41 @@ ENV CURL_VERSION="8.11.0-r2"
 # renovate: datasource=repology depName=alpine_3_20/fping versioning=loose
 ENV FPING_VERSION="5.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
-ENV GIT_VERSION="2.45.2-r0"
+ENV GIT_VERSION="2.47.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
 ENV HTOP_VERSION="3.3.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/iperf3 versioning=loose
 ENV IPERF3_VERSION="3.17.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/iproute2 versioning=loose
-ENV IPROUTE2_VERSION="6.9.0-r0"
+ENV IPROUTE2_VERSION="6.11.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/ipset versioning=loose
-ENV IPSET_VERSION="7.21-r2"
+ENV IPSET_VERSION="7.22-r1"
 # renovate: datasource=repology depName=alpine_3_20/iputils versioning=loose
-ENV IPUTILS_VERSION="20240117-r0"
+ENV IPUTILS_VERSION="20240905-r0"
 # renovate: datasource=repology depName=alpine_3_20/jq versioning=loose
 ENV JQ_VERSION="1.7.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/net-tools versioning=loose
 ENV NET_TOOLS_VERSION="2.10-r3"
 # renovate: datasource=repology depName=alpine_3_20/nmap versioning=loose
-ENV NMAP_VERSION="7.95-r0"
+ENV NMAP_VERSION="7.95-r1"
 # renovate: datasource=repology depName=alpine_3_20/nmap-ncat versioning=loose
-ENV NMAP_NCAT_VERSION="7.95-r0"
+ENV NMAP_NCAT_VERSION="7.95-r1"
 # renovate: datasource=repology depName=alpine_3_20/nmap-scripts versioning=loose
-ENV NMAP_SCRIPTS_VERSION="7.95-r0"
+ENV NMAP_SCRIPTS_VERSION="7.95-r1"
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
-ENV OPENSSH_VERSION="9.7_p1-r4"
+ENV OPENSSH_VERSION="9.9_p1-r2"
 # renovate: datasource=repology depName=alpine_3_20/openssl versioning=loose
-ENV OPENSSL_VERSION="3.3.2-r1"
+ENV OPENSSL_VERSION="3.3.2-r4"
 # renovate: datasource=repology depName=alpine_3_20/tcpdump versioning=loose
-ENV TCPDUMP_VERSION="4.99.4-r1"
+ENV TCPDUMP_VERSION="4.99.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/vim versioning=loose
 ENV VIM_VERSION="9.1.0707-r0"
 # renovate: datasource=repology depName=alpine_3_20/wget versioning=loose
 ENV WGET_VERSION="1.24.5-r0"
 # renovate: datasource=repology depName=alpine_3_20/zsh versioning=loose
-ENV ZSH_VERSION="5.9-r3"
+ENV ZSH_VERSION="5.9-r4"
 # renovate: datasource=repology depName=alpine_3_20/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.44.1-r2"
+ENV YQ_GO_VERSION="4.44.5-r0"
 
 RUN set -ex \
     && apk update \
