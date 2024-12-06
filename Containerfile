@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debuggin
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
 ENV BASH_VERSION="5.2.26-r0"
 # renovate: datasource=repology depName=alpine_3_20/bash-completion versioning=loose
-ENV BASH_COMPLETION_VERSION="2.12.0-r0"
+ENV BASH_COMPLETION_VERSION="2.14.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
 ENV BIND_TOOLS_VERSION="9.18.31-r0"
 # renovate: datasource=repology depName=alpine_3_20/conntrack-tools versioning=loose
@@ -15,17 +15,17 @@ ENV CURL_VERSION="8.11.0-r2"
 # renovate: datasource=repology depName=alpine_3_20/fping versioning=loose
 ENV FPING_VERSION="5.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
-ENV GIT_VERSION="2.45.2-r0"
+ENV GIT_VERSION="2.47.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/htop versioning=loose
 ENV HTOP_VERSION="3.3.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/iperf3 versioning=loose
 ENV IPERF3_VERSION="3.17.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/iproute2 versioning=loose
-ENV IPROUTE2_VERSION="6.9.0-r0"
+ENV IPROUTE2_VERSION="6.11.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/ipset versioning=loose
-ENV IPSET_VERSION="7.21-r2"
+ENV IPSET_VERSION="7.22-r1"
 # renovate: datasource=repology depName=alpine_3_20/iputils versioning=loose
-ENV IPUTILS_VERSION="20240117-r0"
+ENV IPUTILS_VERSION="20240905-r0"
 # renovate: datasource=repology depName=alpine_3_20/jq versioning=loose
 ENV JQ_VERSION="1.7.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/net-tools versioning=loose
