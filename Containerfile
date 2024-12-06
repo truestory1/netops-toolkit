@@ -3,7 +3,7 @@ FROM alpine:3.21.0
 LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
-ENV BASH_VERSION="5.2.26-r0"
+ENV BASH_VERSION="5.2.37-r0"
 # renovate: datasource=repology depName=alpine_3_20/bash-completion versioning=loose
 ENV BASH_COMPLETION_VERSION="2.14.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/bind-tools versioning=loose
