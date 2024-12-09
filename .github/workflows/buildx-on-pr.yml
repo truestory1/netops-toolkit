@@ -40,7 +40,7 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
           platforms: ${{ env.PLATFORMS }}
-          # provenance: false
+          provenance: false
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
