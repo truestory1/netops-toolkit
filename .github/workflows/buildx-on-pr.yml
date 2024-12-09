@@ -44,3 +44,5 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          outputs: "type=image,name=target,\
+                    annotation-index.org.opencontainers.image.description=NetOps Toolkit - Kubernetes Debugging Container"
