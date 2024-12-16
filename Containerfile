@@ -76,6 +76,7 @@ RUN set -ex \
         openssl${OPENSSL_VERSION:+=$OPENSSL_VERSION} \
         tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
         vim${VIM_VERSION:+=$VIM_VERSION} \
+        wget${WGET_VERSION:+=$WGET_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
         yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
