@@ -1,14 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "includeForks": true,
+  "forkProcessing": "enabled",
   "extends": [
     "config:recommended",
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^Containerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^Containerfile$"
+      ],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?( registryUrl=(?<registryUrl>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ],
