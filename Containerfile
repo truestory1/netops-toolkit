@@ -7,7 +7,7 @@ ENV BASH_VERSION="5.2.37-r0"
 # renovate: datasource=repology depName=alpine_3_21/bash-completion versioning=loose
 ENV BASH_COMPLETION_VERSION="2.14.0-r0"
 # renovate: datasource=repology depName=alpine_3_21/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.18.32-r0"
+ENV BIND_TOOLS_VERSION="9.18.33-r0"
 # renovate: datasource=repology depName=alpine_3_21/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
@@ -39,17 +39,17 @@ ENV NMAP_SCRIPTS_VERSION="7.95-r1"
 # renovate: datasource=repology depName=alpine_3_21/openssh versioning=loose
 ENV OPENSSH_VERSION="9.9_p1-r2"
 # renovate: datasource=repology depName=alpine_3_21/openssl versioning=loose
-ENV OPENSSL_VERSION="3.3.2-r4"
+ENV OPENSSL_VERSION="3.3.3-r0"
 # renovate: datasource=repology depName=alpine_3_21/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.5-r0"
 # renovate: datasource=repology depName=alpine_3_21/vim versioning=loose
-ENV VIM_VERSION="9.1.1012-r0"
+ENV VIM_VERSION="9.1.1105-r0"
 # renovate: datasource=repology depName=alpine_3_21/wget versioning=loose
 ENV WGET_VERSION="1.25.0-r0"
 # renovate: datasource=repology depName=alpine_3_21/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r4"
 # renovate: datasource=repology depName=alpine_3_21/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.44.5-r0"
+ENV YQ_GO_VERSION="4.44.5-r2"
 
 RUN set -ex \
     && apk update \
