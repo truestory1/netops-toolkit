@@ -7,7 +7,7 @@ ENV BASH_VERSION="5.2.37-r0"
 # renovate: datasource=repology depName=alpine_3_22/bash-completion versioning=loose
 ENV BASH_COMPLETION_VERSION="2.16.0-r0"
 # renovate: datasource=repology depName=alpine_3_22/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.20.10-r0"
+ENV BIND_TOOLS_VERSION="9.20.11-r0"
 # renovate: datasource=repology depName=alpine_3_22/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.8-r0"
 # renovate: datasource=repology depName=alpine_3_22/curl versioning=loose
@@ -43,7 +43,7 @@ ENV OPENSSL_VERSION="3.5.1-r0"
 # renovate: datasource=repology depName=alpine_3_22/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.5-r1"
 # renovate: datasource=repology depName=alpine_3_22/vim versioning=loose
-ENV VIM_VERSION="9.1.1415-r0"
+ENV VIM_VERSION="9.1.1566-r0"
 # renovate: datasource=repology depName=alpine_3_22/wget versioning=loose
 ENV WGET_VERSION="1.25.0-r1"
 # renovate: datasource=repology depName=alpine_3_22/zsh versioning=loose
