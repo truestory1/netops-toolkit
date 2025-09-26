@@ -37,9 +37,9 @@ ENV NMAP_NCAT_VERSION="7.97-r0"
 # renovate: datasource=repology depName=alpine_3_22/nmap-scripts versioning=loose
 ENV NMAP_SCRIPTS_VERSION="7.97-r0"
 # renovate: datasource=repology depName=alpine_3_22/openssh versioning=loose
-ENV OPENSSH_VERSION="10.0_p1-r7"
+ENV OPENSSH_VERSION="10.0_p1-r9"
 # renovate: datasource=repology depName=alpine_3_22/openssl versioning=loose
-ENV OPENSSL_VERSION="3.5.2-r0"
+ENV OPENSSL_VERSION="3.5.3-r1"
 # renovate: datasource=repology depName=alpine_3_22/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.5-r1"
 # renovate: datasource=repology depName=alpine_3_22/vim versioning=loose
@@ -49,7 +49,7 @@ ENV WGET_VERSION="1.25.0-r1"
 # renovate: datasource=repology depName=alpine_3_22/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r5"
 # renovate: datasource=repology depName=alpine_3_22/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.46.1-r1"
+ENV YQ_GO_VERSION="4.47.2-r0"
 
 RUN set -ex \
     && apk update \
