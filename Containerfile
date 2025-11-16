@@ -27,7 +27,7 @@ ENV IPSET_VERSION="7.24-r0"
 # renovate: datasource=repology depName=alpine_3_22/iputils versioning=loose
 ENV IPUTILS_VERSION="20240905-r0"
 # renovate: datasource=repology depName=alpine_3_22/jq versioning=loose
-ENV JQ_VERSION="1.8.0-r0"
+ENV JQ_VERSION="1.8.1-r0"
 # renovate: datasource=repology depName=alpine_3_22/net-tools versioning=loose
 ENV NET_TOOLS_VERSION="2.10-r3"
 # renovate: datasource=repology depName=alpine_3_22/nmap versioning=loose
