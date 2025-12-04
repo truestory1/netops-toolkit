@@ -1,4 +1,4 @@
-FROM alpine:3.23.0
+FROM alpine:3.23.0@sha256:51183f2cfa6320055da30872f211093f9ff1d3cf06f39a0bdb212314c5dc7375
 
 LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
