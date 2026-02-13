@@ -37,6 +37,22 @@ jobs:
           context: .
           file: Containerfile
           tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
+          # platforms: ${{ env.PLATFORMS }}
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Test the image
+        run: |
+          docker run --rm ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }} uname
+
+      - name: Buildx and Push
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          file: Containerfile
+          tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
           platforms: ${{ env.PLATFORMS }}
