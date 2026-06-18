@@ -47,7 +47,7 @@ ENV VIM_VERSION="9.2.0663-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
 # renovate: datasource=repology depName=alpine_3_24/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.49.2-r6"
+ENV YQ_GO_VERSION="4.53.3-r0"
 
 RUN set -ex \
     && apk update \
