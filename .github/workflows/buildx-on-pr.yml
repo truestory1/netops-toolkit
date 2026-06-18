@@ -56,7 +56,7 @@ jobs:
 
       - name: Scan image for vulnerabilities
         id: scan
-        uses: anchore/scan-action@v6
+        uses: anchore/scan-action@v7
         with:
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
           fail-build: true
