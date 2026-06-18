@@ -79,8 +79,29 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VER_MINOR }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VER_MAJOR }}
           platforms: ${{ env.PLATFORMS }}
-          provenance: false
+          provenance: mode=max
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=NetOps Toolkit - Kubernetes Debugging Container
+
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VER_FULL }}
+          format: spdx-json
+          output-file: sbom.spdx.json
+          upload-artifact: true
+
+      - name: Scan image for vulnerabilities
+        id: scan
+        uses: anchore/scan-action@v6
+        with:
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VER_FULL }}
+          output-format: sarif
+          fail-build: false
+
+      - name: Upload scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
