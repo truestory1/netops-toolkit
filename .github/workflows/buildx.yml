@@ -99,7 +99,7 @@ jobs:
 
       - name: Scan image for vulnerabilities
         id: scan
-        uses: anchore/scan-action@v6
+        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 # v7
         with:
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VER_FULL }}
           output-format: sarif
