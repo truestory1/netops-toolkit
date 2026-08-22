@@ -51,7 +51,7 @@ ENV YQ_GO_VERSION="4.53.3-r0"
 
 RUN set -ex \
     && apk update \
-    && apk upgrade \ # Upgrade all packages to pick up security patches
+    # && apk upgrade \ # Not needed for this image - we want reproducibility
     && apk add --no-cache \
         bash${BASH_VERSION:+=$BASH_VERSION} \
         bash-completion${BASH_COMPLETION_VERSION:+=$BASH_COMPLETION_VERSION} \
