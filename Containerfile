@@ -74,13 +74,12 @@ RUN set -ex \
         openssl${OPENSSL_VERSION:+=$OPENSSL_VERSION} \
         tcpdump${TCPDUMP_VERSION:+=$TCPDUMP_VERSION} \
         vim${VIM_VERSION:+=$VIM_VERSION} \
-        wget${WGET_VERSION:+=$WGET_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
         yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true \
+RUN curl -fsSL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh || true \
     && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
     && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
