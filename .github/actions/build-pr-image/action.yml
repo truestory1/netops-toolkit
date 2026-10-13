@@ -1,0 +1,66 @@
+name: 'Build PR Image'
+description: 'Build, test, scan and push container image on PR'
+
+inputs:
+  registry:
+    description: 'Image registry'
+    required: true
+    default: 'ghcr.io'
+  platforms:
+    description: 'Target platforms'
+    required: true
+    default: 'linux/amd64,linux/arm64'
+  pr_number:
+    description: 'Pull request number'
+    required: false
+    default: ''
+  github_token:
+    description: 'GitHub token for registry login'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Docker
+      uses: ./.github/actions/setup-docker
+      with:
+        registry: ${{ inputs.registry }}
+        github_token: ${{ inputs.github_token }}
+
+    - name: Build
+      uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7
+      with:
+        context: .
+        file: Containerfile
+        tags: |
+          ${{ inputs.registry }}/${{ env.IMAGE_NAME }}:testing-${{ inputs.pr_number }}
+        load: true
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Test the image
+      shell: bash
+      run: |
+        docker run --rm ${{ inputs.registry }}/${{ env.IMAGE_NAME }}:testing-${{ inputs.pr_number }} uname
+
+    - name: Scan image and generate SBOM
+      uses: ./.github/actions/scan-image
+      with:
+        image: ${{ inputs.registry }}/${{ env.IMAGE_NAME }}:testing-${{ inputs.pr_number }}
+        fail_build: 'true'
+        severity_cutoff: 'critical'
+
+    - name: Build and Push
+      uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7
+      with:
+        context: .
+        file: Containerfile
+        tags: |
+          ${{ inputs.registry }}/${{ env.IMAGE_NAME }}:testing
+          ${{ inputs.registry }}/${{ env.IMAGE_NAME }}:testing-${{ inputs.pr_number }}
+        platforms: ${{ inputs.platforms }}
+        provenance: false
+        push: true
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=NetOps Toolkit - Kubernetes Debugging Container
