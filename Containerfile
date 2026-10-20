@@ -43,11 +43,11 @@ ENV OPENSSL_VERSION="3.5.9-r0"
 # renovate: datasource=repology depName=alpine_3_24/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.6-r1"
 # renovate: datasource=repology depName=alpine_3_24/vim versioning=loose
-ENV VIM_VERSION="9.2.1091-r0"
+ENV VIM_VERSION="9.2.1202-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
 # renovate: datasource=repology depName=alpine_3_24/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.53.3-r1"
+ENV YQ_GO_VERSION="4.53.3-r2"
 
 RUN set -ex \
     && apk update \
