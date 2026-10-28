@@ -47,7 +47,7 @@ ENV VIM_VERSION="9.2.1202-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
 # renovate: datasource=repology depName=alpine_3_24/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.53.3-r2"
+ENV YQ_GO_VERSION="4.54.1-r0"
 
 RUN set -ex \
     && apk update \
@@ -76,7 +76,8 @@ RUN set -ex \
         vim${VIM_VERSION:+=$VIM_VERSION} \
         wget${WGET_VERSION:+=$WGET_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
-        yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
+        # yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
+    && apk add --no-cache yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
