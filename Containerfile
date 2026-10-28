@@ -1,4 +1,4 @@
-FROM alpine:3.24.2@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6
+FROM alpine:3.24.3
 
 LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
@@ -7,11 +7,11 @@ ENV BASH_VERSION="5.3.9-r1"
 # renovate: datasource=repology depName=alpine_3_24/bash-completion versioning=loose
 ENV BASH_COMPLETION_VERSION="2.17.0-r1"
 # renovate: datasource=repology depName=alpine_3_24/bind-tools versioning=loose
-ENV BIND_TOOLS_VERSION="9.20.29-r0"
+ENV BIND_TOOLS_VERSION="9.20.30-r0"
 # renovate: datasource=repology depName=alpine_3_24/conntrack-tools versioning=loose
 ENV CONNTRACK_TOOLS_VERSION="1.4.9-r0"
 # renovate: datasource=repology depName=alpine_3_24/curl versioning=loose
-ENV CURL_VERSION="8.22.0-r0"
+ENV CURL_VERSION="8.23.0-r0"
 # renovate: datasource=repology depName=alpine_3_24/fping versioning=loose
 ENV FPING_VERSION="5.5-r0"
 # renovate: datasource=repology depName=alpine_3_24/git versioning=loose
@@ -43,11 +43,11 @@ ENV OPENSSL_VERSION="3.5.9-r0"
 # renovate: datasource=repology depName=alpine_3_24/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.6-r1"
 # renovate: datasource=repology depName=alpine_3_24/vim versioning=loose
-ENV VIM_VERSION="9.2.1091-r0"
+ENV VIM_VERSION="9.2.1202-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
 # renovate: datasource=repology depName=alpine_3_24/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.53.3-r1"
+ENV YQ_GO_VERSION="4.54.1-r0"
 
 RUN set -ex \
     && apk update \
@@ -76,7 +76,8 @@ RUN set -ex \
         vim${VIM_VERSION:+=$VIM_VERSION} \
         wget${WGET_VERSION:+=$WGET_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
-        yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
+        # yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
+    && apk add --no-cache yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
 
 # Install oh-my-zsh and plugins/themes
