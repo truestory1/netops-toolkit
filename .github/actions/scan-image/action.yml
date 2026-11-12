@@ -38,6 +38,7 @@ runs:
         fail-build: ${{ inputs.fail_build }}
         severity-cutoff: ${{ inputs.severity_cutoff }}
         output-format: sarif
+        grype-version: v0.121.0
 
     - name: Upload scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4
