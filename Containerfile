@@ -15,7 +15,7 @@ ENV CURL_VERSION="8.23.0-r0"
 # renovate: datasource=repology depName=alpine_3_24/fping versioning=loose
 ENV FPING_VERSION="5.5-r0"
 # renovate: datasource=repology depName=alpine_3_24/git versioning=loose
-ENV GIT_VERSION="2.54.0-r0"
+ENV GIT_VERSION="2.54.1-r0"
 # renovate: datasource=repology depName=alpine_3_24/htop versioning=loose
 ENV HTOP_VERSION="3.5.3-r0"
 # renovate: datasource=repology depName=alpine_3_24/iperf3 versioning=loose
@@ -37,17 +37,17 @@ ENV NMAP_NCAT_VERSION="7.99-r0"
 # renovate: datasource=repology depName=alpine_3_24/nmap-scripts versioning=loose
 ENV NMAP_SCRIPTS_VERSION="7.99-r0"
 # renovate: datasource=repology depName=alpine_3_24/openssh versioning=loose
-ENV OPENSSH_VERSION="10.3_p1-r1"
+ENV OPENSSH_VERSION="10.3_p1-r2"
 # renovate: datasource=repology depName=alpine_3_24/openssl versioning=loose
 ENV OPENSSL_VERSION="3.5.9-r0"
 # renovate: datasource=repology depName=alpine_3_24/tcpdump versioning=loose
 ENV TCPDUMP_VERSION="4.99.6-r1"
 # renovate: datasource=repology depName=alpine_3_24/vim versioning=loose
-ENV VIM_VERSION="9.2.1202-r0"
+ENV VIM_VERSION="9.2.1310-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
-# renovate: datasource=repology depName=alpine_3_24/yq-go versioning=loose
-ENV YQ_GO_VERSION="4.54.1-r0"
+# renovate: datasource=repology depName=edge/yq-go versioning=loose
+ENV YQ_GO_VERSION="4.54.1-r1"
 
 RUN set -ex \
     && apk update \
