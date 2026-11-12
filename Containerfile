@@ -1,4 +1,4 @@
-FROM alpine:3.24.3
+FROM alpine:3.24.4
 
 LABEL org.opencontainers.image.description="NetOps Toolkit - Kubernetes Debugging Container"
 
@@ -44,6 +44,8 @@ ENV OPENSSL_VERSION="3.5.9-r0"
 ENV TCPDUMP_VERSION="4.99.6-r1"
 # renovate: datasource=repology depName=alpine_3_24/vim versioning=loose
 ENV VIM_VERSION="9.2.1310-r0"
+# renovate: datasource=repology depName=alpine_3_24/zlib versioning=loose
+ENV ZLIB_VERSION="1.4-r0"
 # renovate: datasource=repology depName=alpine_3_24/zsh versioning=loose
 ENV ZSH_VERSION="5.9-r7"
 # renovate: datasource=repology depName=edge/yq-go versioning=loose
@@ -76,6 +78,7 @@ RUN set -ex \
         vim${VIM_VERSION:+=$VIM_VERSION} \
         wget${WGET_VERSION:+=$WGET_VERSION} \
         zsh${ZSH_VERSION:+=$ZSH_VERSION} \
+        zlib${ZLIB_VERSION:+=$ZLIB_VERSION} \
         # yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} \
     && apk add --no-cache yq-go${YQ_GO_VERSION:+=$YQ_GO_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
     && rm -rf /var/cache/apk/*  # Clean up cache to reduce layer size
