@@ -60,12 +60,13 @@ jobs:
 
       - name: Scan image for vulnerabilities
         id: scan
-        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 # v7
+        uses: anchore/scan-action@v7
         with:
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:testing-${{ github.event.pull_request.number }}
           fail-build: true
           severity-cutoff: critical
           output-format: sarif
+          grype-version: v0.121.0
 
       - name: Upload scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4
